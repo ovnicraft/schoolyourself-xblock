@@ -17,6 +17,9 @@ class SchoolYourselfLessonXBlock(SchoolYourselfXBlock):
     has_children = False
     has_score = False
 
+    def get_display_name(self, module_title):
+      return "Lesson: %s" % module_title
+
     def student_view(self, context=None):
       """
       The primary view of the SchoolYourselfLessonXBlock, shown to students
@@ -69,7 +72,7 @@ class SchoolYourselfLessonXBlock(SchoolYourselfXBlock):
          """\
             <vertical_demo>
               <schoolyourself_lesson
-                  base_url="https://dev.schoolyourself.org"
+                  base_url="https://schoolyourself.org"
                   module_id="algebra/multiplication"
                   module_title="Multiplication"
                   module_description="Multiplying positive numbers, in any order"
